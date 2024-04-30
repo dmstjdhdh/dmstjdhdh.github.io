@@ -1,7 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
+import Scene from './componenets/Scene';
+
+const CenteredContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
 
 function App() {
-  return <h1>어쩔</h1>;
+  return (
+    <CenteredContainer>
+      <Scene />
+    </CenteredContainer>
+  );
 }
 
 export default App;
