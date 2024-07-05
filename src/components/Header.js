@@ -1,38 +1,67 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-const SiteHeader = styled.header`
+const HeaderContainer = styled.header`
+  width: 100%;
+  padding: 20px 100px;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 10px 20px;
-  background-color: ${({ theme }) => theme.color.gray1};
-  border-bottom: 1px solid ${({ theme }) => theme.color.gray3};
+  border-bottom: 1px solid #ececec;
 `;
 
-const NavButton = styled.button`
-  background-color: transparent;
-  border: none;
-  color: ${({ theme }) => theme.color.black};
-  font-size: 1rem;
-  cursor: pointer;
-  margin: 0 10px;
+const Nav = styled.nav`
+  display: flex;
+  gap: 40px;
 
-  &:hover {
-    color: ${({ theme }) => theme.color.main};
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    &:hover {
+      color: mediumturquoise;
+    }
+
+    &.active {
+      color: mediumturquoise;
+    }
   }
 `;
 
-const Header = () => {
+function Header() {
+  const location = useLocation();
+
   return (
-    <SiteHeader>
-      <div>
-        <NavButton>Portfolio</NavButton>
-        <NavButton>My Log</NavButton>
-      </div>
-    </SiteHeader>
+    <>
+      <HeaderContainer>
+        <Nav>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+            소개
+          </Link>
+          <Link
+            to="/portfolio"
+            className={location.pathname === '/portfolio' ? 'active' : ''}
+          >
+            포트폴리오
+          </Link>
+          <Link
+            to="/storybook"
+            className={location.pathname === '/storybook' ? 'active' : ''}
+          >
+            StoryBook
+          </Link>
+          <Link
+            to="/blog"
+            className={location.pathname === '/blog' ? 'active' : ''}
+          >
+            블로그
+          </Link>
+        </Nav>
+      </HeaderContainer>
+    </>
   );
-};
+}
 
 export default Header;

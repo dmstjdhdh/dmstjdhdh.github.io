@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import Neupinion from './portfolio/Neupinion';
-import Popup from './Popup';
 
 const Content = styled.div`
   flex: 1;
-  width: 100%;
+  max-width: 800px;
   margin-top: 60px;
 `;
 
@@ -67,12 +65,6 @@ const JobDetails = styled.p`
   line-height: 1.5;
 `;
 
-const Portfolio = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-`;
-
 const TechStack = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -88,7 +80,6 @@ const TechStack = styled.div`
 
 const Main = () => {
   const sectionsRef = useRef([]);
-  const [selectedPortfolio, setSelectedPortfolio] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -117,14 +108,6 @@ const Main = () => {
     };
   }, []);
 
-  const openPopup = (portfolio) => {
-    setSelectedPortfolio(portfolio);
-  };
-
-  const closePopup = () => {
-    setSelectedPortfolio(null);
-  };
-
   return (
     <Content>
       <ProfileHeader>
@@ -142,8 +125,8 @@ const Main = () => {
         <h2>학력</h2>
         <Job>
           <JobTitle>중앙대학교 소프트웨어학부</JobTitle>
-          <JobDetails>총 학점 평균: 3.77</JobDetails>
-          <JobDetails>총 이수 학점: 79 (3학년 1학기 기준)</JobDetails>
+          <JobDetails>총 학점 평균: 3.68</JobDetails>
+          <JobDetails>총 이수 학점: 97 </JobDetails>
           <JobDetails>재학 기간: 2020 - 2025</JobDetails>
         </Job>
       </Section>
@@ -200,8 +183,7 @@ const Main = () => {
             TypeScript와 JavaScript를 사용하는 개발을 주로 해왔습니다.
           </JobDetails>
           <JobDetails>
-            React 및 React Native 프로젝트를 2024년도 초반부터 경험하고
-            있습니다.
+            React 및 React Native 프로젝트를 2024년도부터 경험하고 있습니다.
           </JobDetails>
           <JobDetails>
             GitHub 협업 문화에 관심이 많으며, 소스코드를 효율적이게 개선하는
@@ -217,19 +199,6 @@ const Main = () => {
           <JobDetails>2024 중앙대학교 캡스톤경진대회 본선 참가</JobDetails>
         </Job>
       </Section>
-
-      <Section ref={(el) => (sectionsRef.current[4] = el)}>
-        <h2>포트폴리오</h2>
-        <Portfolio>
-          <Neupinion openPopup={openPopup} />
-        </Portfolio>
-      </Section>
-
-      <Popup
-        isVisible={!!selectedPortfolio}
-        portfolio={selectedPortfolio}
-        onClose={closePopup}
-      />
     </Content>
   );
 };
