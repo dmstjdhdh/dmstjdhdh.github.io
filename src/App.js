@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import theme from './shared/theme';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Header from './components/Header';
+// import Header from './components/Header';
 import StoryBook from './components/StoryBook';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Header />
+      {/*<Header />*/}
       <Container>
         <TransitionGroup>
           <CSSTransition key={location.key} classNames="page" timeout={350}>
