@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import theme from './shared/theme';
 import Main from './components/Main';
 import Footer from './components/Footer';
-// import Header from './components/Header';
 import StoryBook from './components/StoryBook';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
+import NavBar from './components/NavBar';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.color.backSub};
@@ -24,25 +24,17 @@ const Container = styled.div`
 
   .page-enter {
     opacity: 0;
-    transform: translateX(100%);
   }
   .page-enter-active {
     opacity: 1;
-    transform: translateX(0);
-    transition:
-      opacity 350ms ease,
-      transform 350ms ease;
+    transition: opacity 350ms ease;
   }
   .page-exit {
     opacity: 1;
-    transform: translateX(0);
   }
   .page-exit-active {
     opacity: 0;
-    transform: translateX(-100%);
-    transition:
-      opacity 350ms ease,
-      transform 350ms ease;
+    transition: opacity 350ms ease;
   }
 `;
 
@@ -52,10 +44,14 @@ const PageWrapper = styled.div`
 
 function App() {
   const location = useLocation();
+  const [isNavBarVisible, setIsNavBarVisible] = useState(false);
+
+  const handleToggleNavBar = () => {
+    setIsNavBarVisible((prev) => !prev);
+  };
 
   return (
     <ThemeProvider theme={theme}>
-      {/*<Header />*/}
       <Container>
         <TransitionGroup>
           <CSSTransition key={location.key} classNames="page" timeout={350}>
@@ -69,6 +65,7 @@ function App() {
             </PageWrapper>
           </CSSTransition>
         </TransitionGroup>
+        <NavBar isVisible={isNavBarVisible} onClose={handleToggleNavBar} />
       </Container>
       <Footer />
     </ThemeProvider>

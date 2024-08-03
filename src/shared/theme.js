@@ -17,6 +17,8 @@ const theme = {
     white: '#FFFFFF',
     green1: '#008000',
     backSub: 'rgba(253,248,213,0.05)',
+    navBackground: 'rgba(245,245,245,0.95)',
+    secondary: 'rgba(227,227,227,0.6)',
   },
   gradient: {
     gradient1: ['#FFFFFF', '#F0F0F0'],
