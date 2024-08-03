@@ -125,8 +125,7 @@ const Main = () => {
         <h2>학력</h2>
         <Job>
           <JobTitle>중앙대학교 소프트웨어학부</JobTitle>
-          <JobDetails>총 학점 평균: 3.68</JobDetails>
-          <JobDetails>총 이수 학점: 97 </JobDetails>
+          <JobDetails>학과 : 소프트웨어학과</JobDetails>
           <JobDetails>재학 기간: 2020 - 2025</JobDetails>
         </Job>
       </Section>
