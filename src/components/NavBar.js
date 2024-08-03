@@ -59,10 +59,10 @@ const NavBar = ({ isVisible, onClose }) => {
   return (
     <>
       <Nav isVisible={isVisible}>
-        <Link to="/">Main</Link>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/storybook">StoryBook</Link>
-        <Link to="/blog">Blog</Link>
+        <Link to="/">Home</Link>
+        <Link to="/portfolio">Experience</Link>
+        <Link to="/storybook">Music</Link>
+        <Link to="/blog">Write</Link>
       </Nav>
       <ArrowButton isVisible={isVisible} onClick={onClose}>
         <ArrowIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
