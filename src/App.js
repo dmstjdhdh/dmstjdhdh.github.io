@@ -4,7 +4,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import theme from './shared/theme';
 import Main from './components/Main';
-import Footer from './components/Footer';
 import StoryBook from './components/StoryBook';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
@@ -19,7 +18,7 @@ const Container = styled.div`
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  margin: 0 auto;
+  margin-bottom: 40px;
   overflow: hidden;
 
   .page-enter {
@@ -67,7 +66,6 @@ function App() {
         </TransitionGroup>
         <NavBar isVisible={isNavBarVisible} onClose={handleToggleNavBar} />
       </Container>
-      <Footer />
     </ThemeProvider>
   );
 }
