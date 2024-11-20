@@ -15,7 +15,7 @@ export const fetchNotionData = async () => {
         'Content-Type': 'application/json',
         'Notion-Version': '2021-05-13',
       },
-    },
+    }
   );
 
   return response.data.results;

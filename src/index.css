@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Freesentation-4Regular", serif;
+  font-family: 'Freesentation-4Regular', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fcfcfc;
@@ -14,5 +14,5 @@ code {
 @font-face {
   font-family: Freesentation-4Regular;
   font-weight: normal;
-  src: url("./fonts/Freesentation-4Regular.ttf") format("truetype");
+  src: url('./fonts/Freesentation-4Regular.ttf') format('truetype');
 }

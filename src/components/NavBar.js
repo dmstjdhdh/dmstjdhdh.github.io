@@ -61,7 +61,6 @@ const NavBar = ({ isVisible, onClose }) => {
       <Nav isVisible={isVisible}>
         <Link to="/">Home</Link>
         <Link to="/portfolio">Experience</Link>
-        <Link to="/storybook">Music</Link>
         <Link to="/blog">Write</Link>
       </Nav>
       <ArrowButton isVisible={isVisible} onClick={onClose}>

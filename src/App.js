@@ -4,10 +4,10 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import theme from './shared/theme';
 import Main from './components/Main';
-import StoryBook from './components/StoryBook';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
 import NavBar from './components/NavBar';
+import StoryBook from './components/StoryBook.tsx';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.color.backSub};
